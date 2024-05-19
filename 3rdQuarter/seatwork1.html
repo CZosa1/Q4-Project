@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Project</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../style.css">
+        <script src="../navbar.js"></script>
+        
+        <!-- BS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- JQuery -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        
+        <!-- GFonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+        
+        <style>
+            @keyframes move {
+                from {background-position-x: 0;}
+                to {background-position-x: -100vw;}
+            }
+
+            #container {
+                background-image: url(gd-background.jpg);
+                background-size: auto max(100%, 100vh);
+                animation: move 60s infinite linear;
+                padding: 20px 0;
+            }
+
+            #container * {
+                font-family: 'Rubik', sans-serif !important;
+            }
+
+            #container .center {
+                color: #fff;
+                text-align: center;
+                vertical-align: middle;
+            }
+
+            #container .bold {
+                font-weight: bold;
+            }
+
+            #container .counter {
+                color: #777;
+            }
+
+            #container .registration {
+                width: 30vw;
+            }
+
+            #content img {
+                width: 20%;
+                transition: 150ms;
+            }
+
+            #container th, td {
+                text-align: center !important;
+            }
+
+            #container th {
+                font-size: x-large;
+            }
+
+            #container a {
+                text-decoration: none !important;
+            }
+        </style>
+    </head>
+    <body class="bg-warning bg-gradient">
+        <nav class="sticky-top mb-3 d-md-flex d-none navbar navbar-expand-sm navbar-dark bg-dark">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse d-flex flex-row justify-content-between">
+                    <ul class="navbar-nav">
+                        <div class="navbar-brand bg-info rounded-circle">
+                            <img height="48" src="https://www.top-hat.net/images/tophat.png">
+                        </div>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../mainpage.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">1st Quarter</a>
+                            <ul class="dropdown-menu text-muted">
+                                <p class="mx-2">HyperText Markup Language</p>
+                                <li><a class="dropdown-item active" href="../1stQuarter/exercise1.html">Exercise 1</a></li>
+                                <li><a class="dropdown-item" href="../1stQuarter/exercise2.html">Exercise 2</a></li>
+                                <li><a class="dropdown-item" href="../1stQuarter/seatwork1.html">Seatwork 1</a></li>
+                                <li><a class="dropdown-item" href="../1stQuarter/seatwork2.html">Seatwork 2</a></li>
+                                <li><a class="dropdown-item" href="../1stQuarter/project.html">Project</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">2nd Quarter</a>
+                            <ul class="dropdown-menu text-muted">
+                                <p class="mx-2">Cascading Style Sheets</p>
+                                <li><a class="dropdown-item" href="../2ndQuarter/exercise1.html">Exercise 1</a></li>
+                                <li><a class="dropdown-item" href="../2ndQuarter/exercise2.html">Exercise 2</a></li>
+                                <li><a class="dropdown-item" href="../2ndQuarter/seatwork1.html">Seatwork 1</a></li>
+                                <li><a class="dropdown-item" href="../2ndQuarter/seatwork2.html">Seatwork 2</a></li>
+                                <li><a class="dropdown-item" href="../2ndQuarter/project.html">Project</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">3rd Quarter</a>
+                            <ul class="dropdown-menu text-muted">
+                                <p class="mx-2">Bootstrap 5</p>
+                                <li><a class="dropdown-item active" href="seatwork1.html">Seatwork 1</a></li>
+                                <li><a class="dropdown-item" href="seatwork2.html">Seatwork 2</a></li>
+                                <li><a class="dropdown-item" href="quiz1.html">Quiz 1</a></li>
+                                <li><a class="dropdown-item" href="quiz2.html">Quiz 2</a></li>
+                                <li><a class="dropdown-item" href="project.html">Project</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">4th Quarter</a>
+                            <ul class="dropdown-menu text-muted">
+                                <p class="mx-2">JavaScript</p>
+                                <li><a class="dropdown-item" href="../4thQuarter/seatwork1.html">Seatwork 1</a></li>
+                                <li><a class="dropdown-item" href="../4thQuarter/seatwork2.html">Seatwork 2</a></li>
+                                <li><a class="dropdown-item disabled" href="#">Quiz 1 (Activity)</a></li>
+                                <li><a class="dropdown-item" href="../index.html">Quiz 2</a></li>
+                                <li><a class="dropdown-item disabled" href="#">Project (not done)</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="mx-5 p-4 bg-light" id="container">
+            <h1 class="text-center">Geometry Dash - Gamemodes</h1>
+            <table class="container table table-bordered table-hover rounded-4 overflow-hidden">
+                <tr>
+                    <th class="table-primary">Gamemode</th>
+                    <th class="table-primary">Info</th>
+                </tr>
+                <tr>
+                    <td>
+                        <img class="img-thumbnail rounded-4" src="cube.png" alt="Cube Icon">
+                    </td>
+                    <td class="table-info center">
+                        <div class="counter">#1</div>
+                        <h2 class="bold">Cube</h2>
+                        <div>
+                            <span class="badge bg-primary">Type: Jump</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img class="img-thumbnail rounded-4" src="ship.png" alt="Ship Icon">
+                    </td>
+                    <td class="table-info center">
+                        <div class="counter">#2</div>
+                        <h2 class="bold">Ship</h2>
+                        <div>
+                            <span class="badge bg-primary">Type: Flight</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img class="img-thumbnail rounded-4" src="ball.png" alt="Ball Icon">
+                    </td>
+                    <td class="table-info center">
+                        <div class="counter">#3</div>
+                        <h2 class="bold">Ball</h2>
+                        <div>
+                            <span class="badge bg-primary">Type: Gravity Inversion</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img class="img-thumbnail rounded-4" src="robot.png" alt="Robot Icon">
+                    </td>
+                    <td class="table-info center">
+                        <div class="counter">#4</div>
+                        <h2 class="bold">Robot</h2>
+                        <div>
+                            <span class="badge bg-primary">Type: Long Jump</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img class="img-thumbnail rounded-4" src="wave.png" alt="Wave Icon">
+                    </td>
+                    <td class="table-info center">
+                        <div class="counter">#5</div>
+                        <h2 class="bold">Wave</h2>
+                        <div>
+                            <span class="badge bg-primary">Type: Diagonals</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img class="img-thumbnail rounded-4" src="spider.png" alt="Spider Icon">
+                    </td>
+                    <td class="table-info center">
+                        <div class="counter">#6</div>
+                        <h2 class="bold">Spider</h2>
+                        <div>
+                            <span class="badge bg-primary">Type: Teleportation</span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <h2 class="center">Source: <a class="badge bg-warning" href="https://geometry-dash.fandom.com/wiki/Geometry_Dash_Wiki" target="_blank">GD Wiki</a></h2>
+        </div>
+        <br>
+    </body>
+</html>

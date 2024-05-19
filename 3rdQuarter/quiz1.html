@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Project</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../style.css">
+        <script src="../navbar.js"></script>
+        
+        <!-- BS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- JQuery -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        
+        <!-- GFonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+        
+        <style>
+            #container {
+                padding-top: 20px;
+                overflow: hidden auto;
+                background-image: url(background.jpg);
+                background-size: 102vw max(100vh, 100%);
+                background-position-x: -2vw;
+            }
+
+            #container * {
+                font-family: 'Rubik', sans-serif;
+            }
+
+            #container h1 {
+                letter-spacing: 7px;
+            }
+
+            #container hr {
+                opacity: 1 !important;
+            }
+
+            #container a {
+                color: #fff !important;
+                text-decoration: none !important;
+            }
+
+            #container img {
+                width: 20% !important;
+            }
+
+            #container .table {
+                opacity: 0.8;
+                overflow: hidden;
+                border-radius: var(--bs-border-radius);
+            }
+
+            #container .table :is(td, th) {
+                opacity: 1 !important;
+            }
+
+            #container .center {
+                text-align: center;
+            }
+
+            #container .thumbnails {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #container .thumbnails > * {
+                width: 50%;
+            }
+            
+            #container .img-thumbnail {
+                width: 35% !important;
+            }
+        </style>
+    </head>
+    <body class="bg-warning bg-gradient">
+        <div class="mx-5 p-4 bg-light text-light" id="container" data-bs-theme="dark">
+            <h1 class="center">&LeftTriangle; Movie Review &RightTriangle;</h1>
+            <br>
+            <div class="row">
+                <div class="col-md-3 thumbnails">
+                    <img class="img-thumbnail" src="CitizenJake_Thumbnail.png">
+                    <br><br>
+                    <img class="img-thumbnail" src="Parasite_Thumbnail.png">
+                    <br><br>
+                    <img class="img-thumbnail" src="GiveUpTomorrow_Thumbnail.png">
+                    <br>
+                </div>
+                <div class="col-md-6">
+                    <table class="table table-bordered center">
+                        <tr>
+                            <th class="bg-info">Title</th>
+                            <th class="bg-info">Synopsis</th>
+                            <th class="bg-info">Casts and Directors</th>
+                            <th class="bg-info">Movie Review</th>
+                        </tr>
+                        <tr>
+                            <td class="bg-success">Citizen Jake</td>
+                            <td class="bg-success">The personal saga of a Filipino and his struggles with the contradictions within his own social class and the demands of a dysfunctional political family in a Third World nation.</td>
+                            <td class="bg-success">
+                                Writers: Mike De Leon, Atom Araullo, Noel Pascual
+                                <br><br>
+                                Director: Mike De Leon
+                            </td>
+                            <td class="bg-success">
+                                <em>
+                                    This movie tackled the most difficult time of the Philippine Political history. It was aired at a time when we need more light as we are approaching darkness once again.
+                                    <br>- danieljacobs-18980
+                                </em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="bg-dark">Parasite</td>
+                            <td class="bg-dark">Greed and class discrimination threaten the newly-formed symbiotic relationship between the wealthy Park family and the destitute Kim clan.</td>
+                            <td class="bg-dark">
+                                Casts: Bong Joon Ho, Han Jin-won
+                                <br><br>
+                                Director: Bong Joon Ho
+                            </td>
+                            <td class="bg-dark">
+                                <em>
+                                    I can't remember the last time I saw a movie that contained as many genres as 'Parasite'. The movie starts out almost like an 'Ocean's Eleven' heist film and then expands into a comedy, mystery, thriller, drama, romance, crime and even horror film. It really did have everything and it was strikingly good at all of them too.
+                                    <br>- jtindahouse
+                                </em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="bg-danger">Give Up Tomorrow</td>
+                            <td class="bg-danger">When a teenager from a political family in the Philippines is accused of a double murder, the country's entire judicial system is put to the test after years of alleged corruption.</td>
+                            <td class="bg-danger">
+                                Writers: Michael Collins, Eric Daniel Metzgar, Marty Syjuco
+                                <br><br>
+                                Director: Michael Collins
+                            </td>
+                            <td class="bg-danger">
+                                <em>
+                                    I saw this film two years ago as a secret screening at the True/False Film Festival. It was easily my favorite documentary that year, and one which will leave you disturbed long after the credits have rolled.
+                                    <br>- brusty1
+                                </em>
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                </div>
+                <div class="col-md-3">
+                    <h3 class="center">Average Rating:</h3>
+                    <br><br><br><br>
+                    <h2 class="center">6.2/10&nbsp;&starf;</h2>
+                    <br><br><br>
+                    <h2 class="center">8.5/10&nbsp;&starf;</h2>
+                    <br><br><br>
+                    <h2 class="center">7.6/10&nbsp;&starf;</h2>
+                    <br>
+                </div>
+            </div>
+            <hr class="container">
+            <h3 class="center">Source:</h3>
+            <h2 class="center"><a class="badge bg-primary" target="_blank" href="https://www.imdb.com/">IMDb</a></h2>
+            <br><br><br><br><br><br><br>
+        </div>
+        <br>
+    </body>
+</html>
