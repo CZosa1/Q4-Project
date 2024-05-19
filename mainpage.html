@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Project</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <script src="navbar.js"></script>
+        
+        <!-- BS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- JQuery -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        
+        <!-- GFonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+        
+        <style>
+            body {
+                height: 100%;
+            }
+            
+            section {
+                width: 700px;
+                max-width: 60%;
+            }
+        </style>
+    </head>
+    <body class="bg-warning bg-gradient">
+        <div id="logo-container">
+            <img id="logo" height="164" src="https://www.top-hat.net/images/tophat.png">
+        </div>
+        
+        <section id="portfolio" class="p-3 rounded-2 mt-5 mb-5 mx-auto bg-light">
+            <div class="text-center">
+                <h1 class="text-random-effect">My Online Portfolio</h1>
+            </div>
+            <p>Hello! This website showcases all my activities throughout the entire school year. Here, you'll find a collection of my projects, assignments, and achievements. Enjoy!</p>
+        </section>
+        
+        <section id="whats-next" class="p-3 rounded-2 mb-5 mx-auto bg-light">
+            <div class="text-center">
+                <h1 class="text-random-effect">What's next?</h1>
+            </div>
+            <p>I think that in the future, I will be able to add even more to my website. I aim to create interactive elements and multimedia content to make my site more engaging.</p>
+        </section>
+        
+        <section id="comments" class="d-flex flex-column p-3 rounded-2 mb-5 mx-auto bg-light">
+            <div class="text-center">
+                <h1 class="text-random-effect">Comment Section</h1>
+            </div>
+            <textarea id="comment-input" class="p-2 w-100 text-left" placeholder="Put any comment here (max 1,750 characters)" maxlength="1750" style="resize: none; height: 200px;"></textarea>
+            <button id="comment-send" class="btn btn-primary btn-lg mx-auto mt-3" type="button">Send</button>
+            <p id="comment-status" class="text-muted text-center mb-0 mt-2">Status: None</p>
+        </section>
+        
+        <script>
+            /* ---------------------- Text Animation Effect ---------------------- */
+            
+            var start_time = new Date().getTime(); // This will be an integer that contains the milliseconds since the epoch time
+            var random_characters = '1234567890!@#$%^&*()-=[];\',./_+{}:"<>?\\|~`'; // A string containing a few random characters
+            
+            function replaceAt(s, index, replacement) {
+                return s.substring(0, index) + replacement + s.substring(index + replacement.length); // This will replace the character in the string at an index with a new string
+            }
+            
+            function updateText() {
+                var current_time = new Date(); // Constructs a new Date object
+                var ms = current_time.getTime(); // Milliseconds since epoch time
+                var elapsed_time = ms - start_time; // Milliseconds since the script started
+                
+                var random_texts = $('.text-random-effect'); // Get a list of elements with the "text-random-effect" class
+                for (var i = 0; i < random_texts.length; i++) { // Iterate through the list
+                    var element = $(random_texts[i]); // Get the current element
+                    
+                    var original_text = element.attr('text'); // Get the original text (may be undefined)
+                    if (!original_text) { // Check if it doesn't exist
+                    original_text = element.text(); // Get the current text and assign it to the variable "original_text"
+                        element.attr('text', original_text); // Set the "text" attribute to the "original_text" variable
+                        element.attr('animating', true);
+                        
+                        var result = ''; // Create an empty string
+                        for (var i = 0; i < original_text.length; i++) {
+                            var char = original_text[i]; // Get the current character from the original text
+                            if (char != ' ') char = random_characters[Math.round(Math.random() * (random_characters.length - 1))];
+                            // If the character is not a space, set it to a random value from the "random_characters" array
+                            result += char; // Concatenate the character to the result
+                        }
+                        
+                        element.text(result); // Set the current text to the result
+                    }
+                    
+                    if (!element.attr('animating')) continue; // If it's already done being animated, continue to next element
+                    
+                    var current_text = element.text(); // Get the current text of the element
+                    
+                    if (current_text === original_text) { // If the current_text is already the same as the original text, then:
+                        element.removeAttr('animating');
+                        continue; // Continue to the next element
+                    }
+                    
+                    var j = 0; // Initialize the variable j to 0
+                    do {
+                        j = Math.round(Math.random() * (original_text.length - 1)); // Set j to a random integer from 0 to the max index of the "original_text" string
+                    } while (original_text[j] === current_text[j]); // do {...} while (...) will run the code {...}, then if the statement (...) is false, will stop looping
+                    
+                    current_text = replaceAt(current_text, j, original_text[j]); // Replace the character at index j with the original character
+                    element.text(current_text); // Set the text of the element to the new text
+                }
+            }
+            
+            setInterval(updateText, 50); // Call the "update_text" function every 50 milliseconds
+            
+            /* ---------------------- Scroll Detector ---------------------- */
+            
+            // An IntersectionObserver will invoke a function when an element is scrolled onto the screen
+            var observer = new IntersectionObserver(entries => { // Construct a new IntersectionObserver and put a function into it
+                for (var i = 0; i < entries.length; i++) { // Loop through all the entries
+                    var entry = entries[i]; // Get the current entry
+                    if (entry.isIntersecting) { // Check if its visible on the screen
+                        var obj = $(entry.target); // Convert to a JQuery object
+                        if (!obj.attr('animating')) obj.removeAttr('text'); // If it's not animating it, remove the text attribute
+                    }
+                }
+            }, {threshold: 1}); // A threshold of 1 means that it will only be intersecting if its 100% visible
+            
+            var elements = $('.text-random-effect'); // Get all elements with the text-random-effect class
+            for (var i = 0; i < elements.length; i++) { // Loop through the elements
+                var element = elements[i]; // Get the current element
+                observer.observe(element); // Add the element to the list of elements for the observer
+            }
+            
+            /* ---------------------- Comment Section Requests ---------------------- */
+            
+            $('#comment-send').on('click', () => { // When the button with the comment-send id is clicked,
+                var current_time = Date.now(); // Set the current_time variable to the milliseconds since unix epoche
+                var end_time = localStorage.getItem('commentDebounce') || (current_time - 1000); // Get the time when the user can send a comment again, if it doesn't exist then set it to the current time minus 1 second
+                
+                var total_seconds = Math.floor((end_time - current_time) / 1000); // Calculates the seconds left until they can send a comment again
+                
+                // The time is formatted like this - M:SS (M - minutes, S - seconds)
+                var seconds = total_seconds % 60; // Calculates the seconds part of the format
+                var minutes = Math.floor(total_seconds / 60); // Calculates the minutes part of the format
+                if (seconds < 10) seconds = '0' + seconds; // Add zero padding on the left (4 -> "04", 19 -> 19)
+                
+                var time = minutes + ':' + seconds; // Concatenate the minutes, the colon, and the seconds all together
+                
+                if (total_seconds > 0) return $('#comment-status').text('Status: Wait ' + time + ' before sending another comment');
+                // If the seconds left until they can send a comment again is greater than 1, tell the user how much time they have to wait until sending another comment
+                
+                var comment = $('#comment-input').val(); // Get the text in the comment input textarea
+                
+                if (comment.length < 5) return $('#comment-status').text('Status: Comment must be at least 5 characters');
+                // If the comment is less than 5 characters, tell the user that it has to be at least 5 characters
+                
+                $('#comment-status').text('Status: Requesting...');
+                // Set the current status to requesting
+                
+                // Send a request to my website, sending the project comment
+                fetch('https://www.top-hat.net/api/send_discord_webhook?id=ict9_project', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({content: 'Project Comment:\n' + comment})
+                }).then(response => {
+                    if (response.status === 200) {
+                        $('#comment-status').text('Status: Sent comment!'); // Tell the user that it sent the comment successfully
+                        $('#comment-input').val(''); // Reset the comment input textarea
+                        
+                        localStorage.setItem('commentDebounce', Date.now() + 300000); // Set the comment debounce to 5 minutes from now
+                        // 5 minutes * 60 seconds * 1,000 milliseconds = 300,000 milliseconds
+                    } else {
+                        $('#comment-status').text('Status: HTTP ' + response.status + ' | ' + response.statusText); // Tell the user the status
+                    }
+                }).catch(error => {
+                    $('#comment-status').text('Status: Error - ' + error.toString()); // Tell the user what error happened
+                });
+            });
+        </script>
+    </body>
+</html>
