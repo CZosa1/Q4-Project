@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Project</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../style.scs">
+        <script src="../navbar.js"></script>
+        
+        <!-- BS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- JQuery -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        
+        <!-- GFonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    </head>
+    <body class="bg-warning bg-gradient">
+        <div class="mx-5 p-4 bg-light">
+            <form>
+                <fieldset>
+                    <legend><h1>Custom Sneaker Order Form</h1></legend>
+    
+                    <fieldset>
+                        <legend class="legend_secondary">Personal Information</legend>
+    
+                        <label for="fname">
+                            Name:<input type="text" id="fname" name="fname" placeholder="Type your full name here" style="width: 50%;"><br>
+                        </label>
+    
+                        <label for="email">
+                            Email:<input type="email" id="email" name="email" placeholder="email@example.com" style="width: 50%;"><br>
+                        </label>
+    
+                        <label for="password">
+                            Password:<input type="password" id="password" name="password" placeholder="Type your password here" style="width: 50%;"><br>
+                        </label>
+    
+                        <label for="telephone">
+                            Telephone:<input type="tel" id="telephone" name="telephone" placeholder="Type your telephone number here" style="width: 50%;"><br>
+                        </label>
+    
+                        <label for="aboutme">
+                            Tell us about yourself:<br>
+                            <textarea maxlength="500" placeholder="Maximum of 500 characters."></textarea>
+                        </label>
+                    </fieldset>
+    
+                    <br>
+    
+                    <label for="size">
+                        Size:
+                        <select>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                        </select>
+                        <small><em>Size reflect standard US men's sizes</em></small>
+                    </label>
+                    
+                    <br><br>
+    
+                    <label for="color">
+                        Color:
+    
+                        <input type="radio" name="color" value="red">Red
+                        <input type="radio" name="color" value="blue">Blue
+                        <input type="radio" name="color" value="black">Black
+                        <input type="radio" name="color" value="silver">Silver
+                    </label>
+    
+                    <br><br>
+    
+                    <label for="addons">
+                        Add-on Features:<br>
+    
+                        <input type="checkbox" name="sparkleyLaces" class=".secondary">Sparkley laces<br>
+                        <input type="checkbox" name="metallicLogo" class=".secondary">Metallic Logo<br>
+                        <input type="checkbox" name="lightupHeels" class=".secondary">Light-up Heels<br>
+                        <input type="checkbox" name="mp3Enabled" class=".secondary">MP3-enabled<br>
+                    </label>
+    
+                    <br>
+    
+                    <input type="submit" value="ENTER" class=".secondary">
+                </fieldset>
+            </form>
+        </div>
+    </body>
+</html>
