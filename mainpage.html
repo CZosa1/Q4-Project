@@ -161,7 +161,7 @@
                 // Set the current status to requesting
                 
                 // Send a request to my website, sending the project comment
-                fetch('https://www.top-hat.net/api/send_discord_webhook?id=ict9_project', {
+                fetch('https://www.top-hat.net/api/send_discord_webhook?name=ict9_project', {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify({content: 'Project Comment:\n' + comment})
