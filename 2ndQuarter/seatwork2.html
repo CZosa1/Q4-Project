@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Project</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../style.css">
+        <script src="../navbar.js"></script>
+        
+        <!-- BS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- JQuery -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        
+        <!-- GFonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+        
+        <style>
+                        #container {
+                background-color: #90bc8c;
+                font-family: Fira Sans, Arial, Helvetica, sans-serif;
+                background-size: cover;
+                background-attachment: fixed;
+                background-image: url(https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+            }
+
+            #container .header {
+                color: #c8ecc4;
+                background-image: linear-gradient(to bottom right, #445348, #5d7c65);
+                padding: 15px;
+                padding-top: 30px;
+                padding-bottom: 30px;
+                box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+                border-radius: 20px;
+            }
+
+            #container hr {
+                background: rgba(0, 0, 0, 0.2);
+                border: none;
+                height: 5px;
+            }
+
+            #container a {
+                color: #c8ecc4
+            }
+
+            #container a:hover {
+                color: #92ad8f
+            }
+
+            #container .container-body {
+                gap: 5px;
+                width: 700px;
+                margin: auto;
+                display: grid;
+                grid-template-areas: 'header right';
+                color: #000000;
+            }
+
+            #container button {
+                padding: 5px;
+                border-radius: 10px;
+            }
+
+            #container button:hover {
+                padding: 5px;
+                border-radius: 10px;
+            }
+
+            #container .grid-header {
+                grid-area: header;
+            }
+
+            #container .grid-right {
+                grid-area: right;
+            }
+            
+            #container .title {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            }
+            
+            #container table {
+                border-spacing: 20px;
+                margin: auto;
+            }
+            
+            #container .menu-item {
+                background-color: #90bc8c;
+                border: 2px solid #627f5f;
+                border-radius: 15px;
+                padding: 10px;
+                max-width: 200px;
+                box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+            }
+            
+            #container .header-item {
+                background-color: #b3e6af;
+                border: 2px solid #789b74;
+                border-radius: 15px;
+                padding: 10px;
+                max-width: 200px;
+                box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+            }
+
+            #container button {
+                font-weight: bold;
+                border-color: rgba(0, 0, 0, 0.5);
+                background-color: rgba(255, 255, 255, 0.5);
+                cursor: pointer;
+            }
+            
+            #container img {
+                border-radius: 20px;
+            }
+
+            #container .footer {
+                color: #c8ecc4;
+                background-image: linear-gradient(to bottom right, #445348, #5d7c65);
+                background-size: 100% 100%;
+                padding: 10px;
+                box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+                border-radius: 20px;
+            }
+
+            #container .last-text {
+                color: #c8ecc4;
+                padding: 5px;
+            }
+
+            @keyframes loop {
+                0% {background-position: 0px 0px;}
+                50% {background-position: 1920px 0px;}
+                100% {background-position: 0px 0px;}
+            }
+
+            #container .footer:hover {
+                background-size: 1920px 100%;
+                background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet, red);
+                cursor: grab;
+            }
+
+            #container .footer:active {
+                background-size: 1920px 100%;
+                background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet, red);
+                animation: loop 2.5s ease-in-out infinite;
+                cursor: grabbing;
+            }
+        </style>
+    </head>
+    <body class="bg-warning bg-gradient">
+        <div class="mx-5 p-4 bg-light" id="container">
+            <div class="header">
+                <center>
+                    <h1>Juan's Pizza</h1>
+                    <hr>
+                    <p><a href="">Home</a> | <a href="">About</a> | <a href="">Contact</a></p>
+                </center>
+            </div>
+    
+            <br>
+    
+            <table>
+                <tr>
+                    <td class="header-item">
+                        <p>Welcome to</p>
+                        <h3 class="title">Juan's Pizza</h3>
+                        <p>Provide address here.</p>
+                        <button>View Menu</button>
+                    </td>
+                    <td>
+                        <img src="https://t3.ftcdn.net/jpg/01/33/61/72/240_F_133617244_dWdivRXwoLVzowl1kn3iFP9JGcuNd8n6.jpg" style="box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);">
+                    </td>
+                </tr>
+            </table>
+    
+            <br>
+    
+            <table>
+                <tr>
+                    <td class="menu-item">
+                        <h3>Pizza Menu</h3>
+                        <center>
+                            <img src="https://t4.ftcdn.net/jpg/01/25/88/23/240_F_125882386_mr2JIucekLR924ortdiBiWu38bvMQGS2.jpg" width="150" height="150">
+                        </center>
+                        <p>Get our Manhattan Classic Cheese Pizza with your choice of sauce and crust.</p>
+    
+                        <center>
+                            <button>Add to cart</button>
+                        </center>
+                    </td>
+                    <td class="menu-item">
+                        <h3>Pizza Menu</h3>
+                        <center>
+                            <img src="https://t4.ftcdn.net/jpg/01/25/88/23/240_F_125882386_mr2JIucekLR924ortdiBiWu38bvMQGS2.jpg" width="150" height="150">
+                        </center>
+                        <p>Get our Manhattan Classic Cheese Pizza with your choice of sauce and crust.</p>
+    
+                        <center>
+                            <button>Add to cart</button>
+                        </center>
+                    </td>
+                    <td class="menu-item">
+                        <h3>Pizza Menu</h3>
+                        <center>
+                            <img src="https://t4.ftcdn.net/jpg/01/25/88/23/240_F_125882386_mr2JIucekLR924ortdiBiWu38bvMQGS2.jpg" width="150" height="150">
+                        </center>
+                        <p>Get our Manhattan Classic Cheese Pizza with your choice of sauce and crust.</p>
+    
+                        <center>
+                            <button>Add to cart</button>
+                        </center>
+                    </td>
+                    <td class="menu-item">
+                        <h3>Pizza Menu</h3>
+                        <center>
+                            <img src="https://t4.ftcdn.net/jpg/01/25/88/23/240_F_125882386_mr2JIucekLR924ortdiBiWu38bvMQGS2.jpg" width="150" height="150">
+                        </center>
+                        <p>Get our Manhattan Classic Cheese Pizza with your choice of sauce and crust.</p>
+    
+                        <center>
+                            <button>Add to cart</button>
+                        </center>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="menu-item">
+                        <h3>Pizza Menu</h3>
+                        <center>
+                            <img src="https://t4.ftcdn.net/jpg/01/25/88/23/240_F_125882386_mr2JIucekLR924ortdiBiWu38bvMQGS2.jpg" width="150" height="150">
+                        </center>
+                        <p>Get our Manhattan Classic Cheese Pizza with your choice of sauce and crust.</p>
+    
+                        <center>
+                            <button>Add to cart</button>
+                        </center>
+                    </td>
+                    <td class="menu-item">
+                        <h3>Pizza Menu</h3>
+                        <center>
+                            <img src="https://t4.ftcdn.net/jpg/01/25/88/23/240_F_125882386_mr2JIucekLR924ortdiBiWu38bvMQGS2.jpg" width="150" height="150">
+                        </center>
+                        <p>Get our Manhattan Classic Cheese Pizza with your choice of sauce and crust.</p>
+    
+                        <center>
+                            <button>Add to cart</button>
+                        </center>
+                    </td>
+                    <td class="menu-item">
+                        <h3>Pizza Menu</h3>
+                        <center>
+                            <img src="https://t4.ftcdn.net/jpg/01/25/88/23/240_F_125882386_mr2JIucekLR924ortdiBiWu38bvMQGS2.jpg" width="150" height="150">
+                        </center>
+                        <p>Get our Manhattan Classic Cheese Pizza with your choice of sauce and crust.</p>
+    
+                        <center>
+                            <button>Add to cart</button>
+                        </center>
+                    </td>
+                    <td class="menu-item">
+                        <h3>Pizza Menu</h3>
+                        <center>
+                            <img src="https://t4.ftcdn.net/jpg/01/25/88/23/240_F_125882386_mr2JIucekLR924ortdiBiWu38bvMQGS2.jpg" width="150" height="150">
+                        </center>
+                        <p>Get our Manhattan Classic Cheese Pizza with your choice of sauce and crust.</p>
+    
+                        <center>
+                            <button>Add to cart</button>
+                        </center>
+                    </td>
+                </tr>
+            </table>
+    
+            <br>
+    
+            <div class="footer">
+                <p class="last-text">Calvin A. Zosa | 9-Emerald</p>
+            </div>
+        </div>
+    </body>
+</html>
